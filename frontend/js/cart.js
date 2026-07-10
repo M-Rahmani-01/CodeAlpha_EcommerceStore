@@ -3,6 +3,8 @@ function loadCart() {
   const cartItems = document.getElementById('cart-items');
   const cartTotal = document.getElementById('cart-total');
 
+  if (!cartItems || !cartTotal) return;
+
   if (cart.length === 0) {
     cartItems.innerHTML = '<p>Your cart is empty!</p>';
     cartTotal.innerHTML = '';
@@ -52,7 +54,7 @@ async function checkout() {
 
   const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
-  const res = await fetch(`${API}/orders`, {
+  const res = await fetch(`${API}/api/orders`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
