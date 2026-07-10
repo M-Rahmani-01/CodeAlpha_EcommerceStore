@@ -2,7 +2,7 @@ const API = 'https://codealphaecommercestore-production.up.railway.app';
 
 // Sab products fetch karo
 async function loadProducts() {
-  const res = await fetch(`${API}/products`);
+  const res = await fetch(`${API}/api/products`);
   const products = await res.json();
 
   const grid = document.getElementById('products-grid');
