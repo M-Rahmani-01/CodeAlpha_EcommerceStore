@@ -1,4 +1,4 @@
-const API = 'http://localhost:5000/api';
+const API = 'https://codealphaecommercestore-production.up.railway.app';
 
 // Sab products fetch karo
 async function loadProducts() {
